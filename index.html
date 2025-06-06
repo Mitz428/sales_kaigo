@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>介護福祉業界特化 Webサイト制作サービス</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background-color: #FFFBF7;
+      /* Soft Peach White */
+      color: #5B5B5B;
+      /* Dark Gray */
+    }
+
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      height: 250px;
+      max-height: 300px;
+    }
+
+    @media (min-width: 768px) {
+      .chart-container {
+        height: 300px;
+        max-height: 350px;
+      }
+    }
+
+    .nav-link.active {
+      color: #FF8A8A;
+      /* Pastel Coral */
+      font-weight: 700;
+    }
+
+    .faq-question {
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-item.open .arrow-down {
+      transform: rotate(180deg);
+    }
+
+    .arrow-down {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .bg-primary-accent {
+      background-color: #FFB3A7;
+    }
+
+    /* Soft Coral */
+    .bg-primary-accent-hover:hover {
+      background-color: #FF8A8A;
+    }
+
+    .text-primary-accent {
+      color: #FF8A8A;
+    }
+
+    .border-primary-accent {
+      border-color: #FFB3A7;
+    }
+
+    .hover-border-primary-accent:hover {
+      border-color: #FFB3A7;
+    }
+
+    .bg-secondary-section {
+      background-color: #F7F8FC;
+    }
+
+    /* Light Lavender Gray */
+    .bg-accent-light {
+      background-color: #A6D6D6;
+    }
+
+    /* Pastel Mint */
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <div class="text-xl font-bold text-primary-accent">介護のミカタWEB</div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#problems" class="nav-link text-gray-600 hover:text-primary-accent">お悩み</a>
+        <a href="#plans" class="nav-link text-gray-600 hover:text-primary-accent">プラン</a>
+        <a href="#features" class="nav-link text-gray-600 hover:text-primary-accent">選ばれる理由</a>
+        <a href="#process" class="nav-link text-gray-600 hover:text-primary-accent">流れ</a>
+        <a href="#pricing" class="nav-link text-gray-600 hover:text-primary-accent">料金 & FAQ</a>
+      </div>
+      <a href="#contact"
+        class="hidden md:inline-block bg-primary-accent text-white font-bold py-2 px-6 rounded-lg bg-primary-accent-hover transition-colors">無料で相談する</a>
+      <button id="mobile-menu-button" class="md:hidden p-2">
+        <span class="text-3xl">≡</span>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4">
+      <a href="#problems" class="block text-center py-2 text-gray-700 hover:bg-red-50">お悩み</a>
+      <a href="#plans" class="block text-center py-2 text-gray-700 hover:bg-red-50">プラン</a>
+      <a href="#features" class="block text-center py-2 text-gray-700 hover:bg-red-50">選ばれる理由</a>
+      <a href="#process" class="block text-center py-2 text-gray-700 hover:bg-red-50">流れ</a>
+      <a href="#pricing" class="block text-center py-2 text-gray-700 hover:bg-red-50">料金 & FAQ</a>
+      <div class="text-center mt-4">
+        <a href="#contact"
+          class="inline-block bg-primary-accent text-white font-bold py-2 px-6 rounded-lg bg-primary-accent-hover transition-colors">無料で相談する</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="py-20 md:py-32 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight">
+          「時間も予算もない…」と<br class="md:hidden">諦めていませんか？
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-600">
+          介護福祉業界特化のWebサイトテンプレートで、<br class="hidden md:inline">最短即日、驚きの低価格で公式ページを公開！
+        </p>
+        <div class="mt-10 flex justify-center space-x-4">
+          <a href="#plans"
+            class="bg-primary-accent text-white font-bold py-3 px-8 rounded-lg text-lg bg-primary-accent-hover transition-colors">選べる3つのプランを見る</a>
+          <a href="#pricing"
+            class="bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-300 transition-colors">料金を今すぐ確認する</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems" class="py-16 md:py-24">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">Webサイトのこんなお悩み、<br class="md:hidden">テンプレートで解決できます</h2>
+          <p class="mt-4 text-gray-600">多くの施設様が抱える共通の課題を、私たちのサービスが解決に導きます。</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <div class="text-5xl mb-4">💰</div>
+            <h3 class="text-xl font-bold mb-2">予算の悩み</h3>
+            <p class="text-gray-600">Webサイト制作は高額で予算が確保できない、費用対効果が見えづらいという問題を解決します。</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <div class="text-5xl mb-4">⏰</div>
+            <h3 class="text-xl font-bold mb-2">時間の悩み</h3>
+            <p class="text-gray-600">多忙な業務の中でも大丈夫。打ち合わせや準備の時間を最小限に抑え、迅速に公開できます。</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <div class="text-5xl mb-4">🧩</div>
+            <h3 class="text-xl font-bold mb-2">専門知識の悩み</h3>
+            <p class="text-gray-600">専門知識は一切不要です。何から始めるべきか、完成後の更新はどうするか、全てサポートします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution" class="py-16 md:py-24 bg-secondary-section">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800">そのお悩み、<br class="md:hidden">私たちの「テンプレートプラン」が全て解決します！</h2>
+        <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-700">
+          私たちは、高額なオーダーメイド制作の課題を解決するため、介護福祉の現場に本当に必要な情報を的確に伝えられる専用テンプレートをご用意しました。プロがデザインした高品質なテンプレートから好きなデザインを選び、事業所の情報をいただくだけ。あとは私たちがスピーディーに差し替えて納品します。<br><br>
+          <span class="font-bold text-primary-accent">「圧倒的な低価格」</span>と<span
+            class="font-bold text-primary-accent">「最短即日のスピード」</span>で、貴施設の“今、伝えたいこと”をすぐに形にします。
+        </p>
+      </div>
+    </section>
+
+    <section id="plans" class="py-16 md:py-24">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">選べる3つのテンプレートプラン</h2>
+          <p class="mt-4 text-gray-600">貴施設の目的とご予算に合わせて、最適なプランをインタラクティブに比較検討できます。</p>
+        </div>
+
+        <div class="chart-container mb-12">
+          <canvas id="planChart"></canvas>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover-border-primary-accent transition-all">
+            <h3 class="text-2xl font-bold text-primary-accent">① 1ページLPプラン</h3>
+            <p class="mt-2 text-gray-600 font-bold">とにかく早く、安く作りたい施設様へ</p>
+            <p class="mt-4 text-gray-600">採用やイベント告知など、特定の目的に特化した1枚の縦長ページです。情報を集約し、ユーザーに素早く届けます。</p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>✓ 1ページ構成</li>
+              <li>✓ 採用・イベント特化</li>
+              <li>✓ 最速納品</li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-primary-accent">
+            <span
+              class="inline-block bg-primary-accent text-white text-sm font-bold px-3 py-1 rounded-full -mt-12 mb-4">一番人気</span>
+            <h3 class="text-2xl font-bold text-primary-accent">② 5ページ標準プラン</h3>
+            <p class="mt-2 text-gray-600 font-bold">公式ページとして信頼感を出したい施設様へ</p>
+            <p class="mt-4 text-gray-600">トップ、理念、サービス、施設概要、お知らせなど、公式サイトに必要なページを網羅。利用者様やご家族に安心感を届けます。</p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>✓ 5ページ構成</li>
+              <li>✓ 公式サイト向け</li>
+              <li>✓ バランスの取れた構成</li>
+            </ul>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover-border-primary-accent transition-all">
+            <h3 class="text-2xl font-bold text-primary-accent">③ 大規模プラン</h3>
+            <p class="mt-2 text-gray-600 font-bold">複数事業所を持つ法人様へ</p>
+            <p class="mt-4 text-gray-600">複数の事業所やサービスを紹介したり、充実したコンテンツで魅力を伝えたい場合に。5ページ以上の構成に柔軟に対応します。</p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>✓ 5ページ以上</li>
+              <li>✓ 法人・多事業所向け</li>
+              <li>✓ 高いカスタマイズ性</li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center mt-16">
+          <h3 class="text-xl font-bold text-gray-700 mb-6">テンプレートデザインのデモを見る</h3>
+          <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+            <a href="#demo-1"
+              class="bg-white border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-lg w-full md:w-auto hover:bg-red-50 transition-colors">①
+              1ページLPプラン</a>
+            <a href="#demo-2"
+              class="bg-white border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-lg w-full md:w-auto hover:bg-red-50 transition-colors">②
+              5ページ標準プラン</a>
+            <a href="#demo-3"
+              class="bg-white border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-lg w-full md:w-auto hover:bg-red-50 transition-colors">③
+              大規模プラン</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">私たちのテンプレートが選ばれる3つの理由</h2>
+          <p class="mt-4 text-gray-600">価格とスピードだけではない、確かな品質をお約束します。</p>
+        </div>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-1 gap-10">
+          <div class="flex items-start space-x-6">
+            <div
+              class="bg-accent-light text-white text-2xl font-bold w-16 h-16 rounded-full flex-shrink-0 flex items-center justify-center">
+              1</div>
+            <div>
+              <h3 class="text-xl font-bold">圧倒的なコストパフォーマンス</h3>
+              <p class="mt-2 text-gray-600">オーダーメイド制作にかかる企画・設計・デザイン費用をテンプレート化で大幅に削減。業界最安クラスの価格で、高品質なウェブサイトが手に入ります。</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-6">
+            <div
+              class="bg-accent-light text-white text-2xl font-bold w-16 h-16 rounded-full flex-shrink-0 flex items-center justify-center">
+              2</div>
+            <div>
+              <h3 class="text-xl font-bold">最短即日の公開スピード</h3>
+              <p class="mt-2 text-gray-600">デザインの打ち合わせは不要です。テンプレートを選び、必要な原稿や写真をご提出いただくだけ。お急ぎの場合は、最短で当日中に公開することも可能です。</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-6">
+            <div
+              class="bg-accent-light text-white text-2xl font-bold w-16 h-16 rounded-full flex-shrink-0 flex items-center justify-center">
+              3</div>
+            <div>
+              <h3 class="text-xl font-bold">介護福祉に特化した安心品質</h3>
+              <p class="mt-2 text-gray-600">
+                ただ安いだけではありません。介護・福祉の事業所として最も重要な「信頼感」や「温かみ」が伝わるよう、プロのデザイナーが業界向けに最適化したテンプレートです。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="py-16 md:py-24">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">ご利用の流れは、たったの3ステップ</h2>
+          <p class="mt-4 text-gray-600">驚くほど簡単なステップで、あなたの施設のWebサイトが完成します。</p>
+        </div>
+        <div class="relative">
+          <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-red-200 -translate-y-1/2"></div>
+          <div class="relative grid md:grid-cols-3 gap-8 text-center">
+            <div class="flex flex-col items-center">
+              <div
+                class="bg-primary-accent text-white w-24 h-24 rounded-full flex items-center justify-center text-3xl font-bold border-8 border-[#FFFBF7] shadow-lg">
+                1</div>
+              <h3 class="mt-6 text-xl font-bold">テンプレート選択</h3>
+              <p class="mt-2 text-gray-600">3つのプランから、目的に合ったテンプレートをお選びください。</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <div
+                class="bg-primary-accent text-white w-24 h-24 rounded-full flex items-center justify-center text-3xl font-bold border-8 border-[#FFFBF7] shadow-lg">
+                2</div>
+              <h3 class="mt-6 text-xl font-bold">写真と文章を提出</h3>
+              <p class="mt-2 text-gray-600">所定のフォーマットに沿って、掲載したい写真と文章をお送りいただきます。</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <div
+                class="bg-primary-accent text-white w-24 h-24 rounded-full flex items-center justify-center text-3xl font-bold border-8 border-[#FFFBF7] shadow-lg">
+                3</div>
+              <h3 class="mt-6 text-xl font-bold">内容を確認して公開！</h3>
+              <p class="mt-2 text-gray-600">私たちが情報を反映します。内容をご確認後、すぐにWebサイトを公開します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-5 gap-12 items-start">
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl font-bold text-gray-800">料金プラン</h2>
+            <p class="mt-4 text-gray-600">初期費用を抑えた、分かりやすい価格設定です。ご予算に応じて柔軟に対応します。</p>
+            <div class="mt-8 space-y-6">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-xl font-bold">1ページLPプラン</h3>
+                <p class="text-3xl font-bold text-primary-accent mt-2">¥39,800 <span
+                    class="text-sm font-normal">(税込)</span></p>
+              </div>
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-xl font-bold">5ページ標準プラン</h3>
+                <p class="text-3xl font-bold text-primary-accent mt-2">¥79,800 <span
+                    class="text-sm font-normal">(税込)</span></p>
+              </div>
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-xl font-bold">大規模プラン</h3>
+                <p class="text-2xl font-bold text-primary-accent mt-2">別途お見積もり</p>
+              </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-500">※月々のサーバー管理、ドメイン費用として別途 ¥2,980 がかかります。</p>
+          </div>
+          <div class="lg:col-span-3">
+            <h2 class="text-3xl font-bold text-gray-800">よくあるご質問</h2>
+            <p class="mt-4 text-gray-600">ご不明な点はこちらで解決できます。</p>
+            <div id="faq-container" class="mt-8 space-y-4">
+              <div class="faq-item bg-gray-50 rounded-lg border border-gray-200">
+                <div class="faq-question p-6 flex justify-between items-center">
+                  <h4 class="font-bold text-lg">デザインをオリジナルに変更できますか？</h4>
+                  <span class="arrow-down text-2xl text-primary-accent">▼</span>
+                </div>
+                <div class="faq-answer px-6 pb-6 text-gray-700">
+                  <p>このプランはテンプレートの枠組みを活かすことで低価格を実現しています。そのため、デザインやレイアウトの大幅な変更はできかねます。写真と文章の差し替えが基本となります。</p>
+                </div>
+              </div>
+              <div class="faq-item bg-gray-50 rounded-lg border border-gray-200">
+                <div class="faq-question p-6 flex justify-between items-center">
+                  <h4 class="font-bold text-lg">文章や写真を用意するのが難しいです。</h4>
+                  <span class="arrow-down text-2xl text-primary-accent">▼</span>
+                </div>
+                <div class="faq-answer px-6 pb-6 text-gray-700">
+                  <p>ご安心ください。オプションで、簡単な文章作成（リライト）や、提携の素材サイトからの写真のご提案も可能です。お気軽にご相談ください。</p>
+                </div>
+              </div>
+              <div class="faq-item bg-gray-50 rounded-lg border border-gray-200">
+                <div class="faq-question p-6 flex justify-between items-center">
+                  <h4 class="font-bold text-lg">なぜこんなに安いのですか？</h4>
+                  <span class="arrow-down text-2xl text-primary-accent">▼</span>
+                </div>
+                <div class="faq-answer px-6 pb-6 text-gray-700">
+                  <p>デザインとシステムをテンプレート化し、お客様との打ち合わせ時間を最小限にすることで、制作にかかるコストを極限まで抑えているためです。品質には自信を持っておりますのでご安心ください。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-primary-accent">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white">Webサイト制作、もう「高い」「難しい」で<br>諦める必要はありません。</h2>
+        <p class="mt-6 text-lg text-red-50 max-w-2xl mx-auto">
+          まずは、どんなウェブサイトが作れるのか、テンプレートデザインをご覧ください。その品質と、驚きの価格にきっとご満足いただけるはずです。</p>
+        <div class="mt-10">
+          <a href="#"
+            class="bg-white text-primary-accent font-bold py-4 px-10 rounded-lg text-lg hover:bg-red-50 transition-colors">無料で相談してみる</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-700 text-white py-8">
+    <div class="container mx-auto px-6 text-center text-sm">
+      <p>株式会社〇〇</p>
+      <p class="mt-1">〒123-4567 東京都〇〇区〇〇1-2-3</p>
+      <p class="mt-4 text-gray-400">&copy; 2024 Your Company Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      const mobileNavLinks = mobileMenu.querySelectorAll('a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      const faqContainer = document.getElementById('faq-container');
+      faqContainer.addEventListener('click', function (e) {
+        const question = e.target.closest('.faq-question');
+        if (question) {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle('open');
+        }
+      });
+
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav a.nav-link');
+
+      function changeNav() {
+        let index = sections.length;
+        while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
+
+        navLinks.forEach((link) => link.classList.remove('active'));
+        if (index > -1) {
+          const activeLink = document.querySelector(`nav a[href="#${sections[index].id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      }
+      changeNav();
+      window.addEventListener('scroll', changeNav);
+
+      const ctx = document.getElementById('planChart').getContext('2d');
+      const planChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['① 1ページLPプラン', '② 5ページ標準プラン', '③ 大規模プラン'],
+          datasets: [{
+            label: 'ページボリューム',
+            data: [1, 5, 8],
+            backgroundColor: [
+              'rgba(166, 214, 214, 0.7)', // Pastel Mint
+              'rgba(255, 179, 167, 0.8)', // Soft Coral
+              'rgba(255, 223, 186, 0.8)'  // Pastel Yellow
+            ],
+            borderColor: [
+              'rgba(166, 214, 214, 1)',
+              'rgba(255, 179, 167, 1)',
+              'rgba(255, 223, 186, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          maintainAspectRatio: false,
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: 'プラン別ページボリューム比較',
+              font: {
+                size: 16,
+                family: "'M PLUS Rounded 1c', sans-serif"
+              },
+              color: '#5B5B5B'
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  let label = context.dataset.label || '';
+                  if (label) {
+                    label += ': ';
+                  }
+                  if (context.parsed.x !== null) {
+                    if (context.label === '③ 大規模プラン') {
+                      label += '5ページ以上';
+                    } else {
+                      label += context.parsed.x + 'ページ';
+                    }
+                  }
+                  return label;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'ページ数目安',
+                color: '#5B5B5B'
+              },
+              ticks: {
+                color: '#7f7f7f',
+                callback: function (value, index, values) {
+                  if (value === 8) return '5+';
+                  return value;
+                }
+              }
+            },
+            y: {
+              ticks: {
+                font: {
+                  size: 14
+                },
+                color: '#5B5B5B'
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
