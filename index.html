@@ -19,11 +19,11 @@
       /* Dark Gray */
     }
 
-    #hero{
+    #hero {
       background-image: url(img/bg.jpeg);
       background-size: cover;
-      background-color:rgba(255,255,255,0.4);
-      background-blend-mode:lighten;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: lighten;
     }
 
     .chart-container {
@@ -75,7 +75,6 @@
       background-color: #FFB3A7;
     }
 
-    /* Soft Coral */
     .bg-primary-accent-hover:hover {
       background-color: #FF8A8A;
     }
@@ -96,12 +95,67 @@
       background-color: #F7F8FC;
     }
 
-    /* Light Lavender Gray */
     .bg-accent-light {
       background-color: #A6D6D6;
     }
 
-    /* Pastel Mint */
+    /* CTAボタンを立体的に見せるCSS */
+    .cta-button {
+      display: inline-block;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      /* py-3 px-6 */
+      border-radius: 0.5rem;
+      /* rounded-lg */
+      color: white;
+      background-color: #FFB3A7;
+      /* bg-primary-accent */
+      box-shadow: 0 4px #E5A195;
+      /* ボタンに厚みを出す影 */
+      transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+
+    .cta-button:hover {
+      background-color: #FF8A8A;
+      /* bg-primary-accent-hover */
+      transform: translateY(-2px);
+      /* 少し浮かせる */
+      box-shadow: 0 6px #D4796D;
+    }
+
+    .cta-button:active {
+      transform: translateY(2px);
+      /* クリック時にへこませる */
+      box-shadow: 0 2px #E5A195;
+    }
+
+    .cta-button-white {
+      display: inline-block;
+      font-weight: bold;
+      padding: 1rem 2.5rem;
+      /* py-4 px-10 */
+      border-radius: 0.5rem;
+      /* rounded-lg */
+      color: #FF8A8A;
+      /* text-primary-accent */
+      background-color: white;
+      box-shadow: 0 4px #F0F0F0;
+      transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      font-size: 1.125rem;
+      /* text-lg */
+    }
+
+    .cta-button-white:hover {
+      background-color: #FFFBF7;
+      /* bg-red-50 の代わり */
+      transform: translateY(-2px);
+      box-shadow: 0 6px #E0E0E0;
+    }
+
+    .cta-button-white:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px #F0F0F0;
+    }
   </style>
 </head>
 
@@ -117,8 +171,9 @@
         <a href="#process" class="nav-link text-gray-600 hover:text-primary-accent">流れ</a>
         <a href="#pricing" class="nav-link text-gray-600 hover:text-primary-accent">料金 & FAQ</a>
       </div>
+      <!-- 立体ボタン用のclassに変更 -->
       <a href="https://forms.gle/SR2oS2bny7wc1vhU7" target="_blank"
-        class="hidden md:inline-block bg-primary-accent text-white font-bold py-2 px-6 rounded-lg bg-primary-accent-hover transition-colors">無料で相談する</a>
+        class="hidden md:inline-block cta-button py-2 px-6">無料で相談する</a>
       <button id="mobile-menu-button" class="md:hidden p-2">
         <span class="text-3xl">≡</span>
       </button>
@@ -130,8 +185,8 @@
       <a href="#process" class="block text-center py-2 text-gray-700 hover:bg-red-50">流れ</a>
       <a href="#pricing" class="block text-center py-2 text-gray-700 hover:bg-red-50">料金 & FAQ</a>
       <div class="text-center mt-4">
-        <a href="https://forms.gle/SR2oS2bny7wc1vhU7" target="_blank"
-          class="inline-block bg-primary-accent text-white font-bold py-2 px-6 rounded-lg bg-primary-accent-hover transition-colors">無料で相談する</a>
+        <!-- 立体ボタン用のclassに変更 -->
+        <a href="https://forms.gle/SR2oS2bny7wc1vhU7" target="_blank" class="cta-button">無料で相談する</a>
       </div>
     </div>
   </header>
@@ -194,7 +249,7 @@
     <section id="plans" class="py-16 md:py-24">
       <div class="container mx-auto px-6">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-800">選べる3つのテンプレートプラン</h2>
+          <h2 class="text-3xl font-bold text-gray-800">選べる3つの制作プラン</h2>
           <p class="mt-4 text-gray-600">貴施設の目的とご予算に合わせて、最適なプランをインタラクティブに比較検討できます。</p>
         </div>
 
@@ -207,11 +262,11 @@
             class="bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover-border-primary-accent transition-all">
             <h3 class="text-2xl font-bold text-primary-accent">① 1ページLPプラン</h3>
             <p class="mt-2 text-gray-600 font-bold">とにかく早く、安く作りたい施設様へ</p>
-            <p class="mt-4 text-gray-600">採用やイベント告知など、特定の目的に特化した1枚の縦長ページです。情報を集約し、ユーザーに素早く届けます。</p>
+            <p class="mt-4 text-gray-600">採用やイベント告知など、特定の目的に特化した1枚の縦長ページです。更新機能がない静的サイトのため、低価格・高速納品が可能です。</p>
             <ul class="mt-4 space-y-2 text-gray-700">
-              <li>✓ 1ページ構成</li>
+              <li>✓ 1ページ構成の静的サイト</li>
               <li>✓ 採用・イベント特化</li>
-              <li>✓ 最速納品</li>
+              <li>✓ 更新機能なし</li>
             </ul>
           </div>
           <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-primary-accent">
@@ -219,22 +274,22 @@
               class="inline-block bg-primary-accent text-white text-sm font-bold px-3 py-1 rounded-full -mt-12 mb-4">一番人気</span>
             <h3 class="text-2xl font-bold text-primary-accent">② 5ページ標準プラン</h3>
             <p class="mt-2 text-gray-600 font-bold">公式ページとして信頼感を出したい施設様へ</p>
-            <p class="mt-4 text-gray-600">トップ、理念、サービス、施設概要、お知らせなど、公式サイトに必要なページを網羅。利用者様やご家族に安心感を届けます。</p>
+            <p class="mt-4 text-gray-600">トップ、理念、サービス、施設概要、お知らせなど、公式サイトに必要なページを網羅。更新機能がない静的サイトです。</p>
             <ul class="mt-4 space-y-2 text-gray-700">
-              <li>✓ 5ページ構成</li>
+              <li>✓ 5ページ構成の静的サイト</li>
               <li>✓ 公式サイト向け</li>
-              <li>✓ バランスの取れた構成</li>
+              <li>✓ 更新機能なし</li>
             </ul>
           </div>
           <div
             class="bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover-border-primary-accent transition-all">
-            <h3 class="text-2xl font-bold text-primary-accent">③ 大規模プラン</h3>
-            <p class="mt-2 text-gray-600 font-bold">複数事業所を持つ法人様へ</p>
-            <p class="mt-4 text-gray-600">複数の事業所やサービスを紹介したり、充実したコンテンツで魅力を伝えたい場合に。5ページ以上の構成に柔軟に対応します。</p>
+            <h3 class="text-2xl font-bold text-primary-accent">③ CMS導入プラン</h3>
+            <p class="mt-2 text-gray-600 font-bold">ご自身で更新したい法人様へ</p>
+            <p class="mt-4 text-gray-600">お知らせやブログをご自身で簡単に更新できるCMSを導入。専門知識不要で、見たまま編集が可能です。</p>
             <ul class="mt-4 space-y-2 text-gray-700">
-              <li>✓ 5ページ以上</li>
-              <li>✓ 法人・多事業所向け</li>
-              <li>✓ 高いカスタマイズ性</li>
+              <li>✓ 5ページ以上に対応</li>
+              <li>✓ 更新機能CMS導入</li>
+              <li>✓ ブログやお知らせの簡単更新</li>
             </ul>
           </div>
         </div>
@@ -249,7 +304,7 @@
               5ページ標準プラン</a>
             <a href="#demo-3"
               class="bg-white border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-lg w-full md:w-auto hover:bg-red-50 transition-colors">③
-              大規模プラン</a>
+              CMS導入プラン</a>
           </div>
         </div>
       </div>
@@ -285,9 +340,10 @@
               class="bg-accent-light text-white text-2xl font-bold w-16 h-16 rounded-full flex-shrink-0 flex items-center justify-center">
               3</div>
             <div>
-              <h3 class="text-xl font-bold">介護福祉に特化した安心品質</h3>
+              <h3 class="text-xl font-bold">介護とWebデザインの専門家による安心品質</h3>
               <p class="mt-2 text-gray-600">
-                ただ安いだけではありません。介護・福祉の事業所として最も重要な「信頼感」や「温かみ」が伝わるよう、プロのデザイナーが業界向けに最適化したテンプレートです。</p>
+                ただ安いだけではありません。介護現場を知る「実務者研修」修了者であり、国家資格である「2級Webデザイン技能士」を保持した運営者が、介護・福祉の事業所として最も重要な「信頼感」や「温かみ」が伝わるよう、業界向けに最適化したテンプレートを制作しています。
+              </p>
             </div>
           </div>
         </div>
@@ -347,11 +403,11 @@
                     class="text-sm font-normal">(税込)</span></p>
               </div>
               <div class="bg-gray-100 p-6 rounded-lg">
-                <h3 class="text-xl font-bold">大規模プラン</h3>
+                <h3 class="text-xl font-bold">CMS導入プラン</h3>
                 <p class="text-2xl font-bold text-primary-accent mt-2">別途お見積もり</p>
               </div>
             </div>
-            <p class="mt-6 text-sm text-gray-500">※月々のサーバー管理、ドメイン費用として別途 ¥2,980 がかかります。</p>
+            <p class="mt-6 text-sm text-gray-500">※ノーコードツールSTUDIOを利用しての提供になります。オリジナルドメインを使用希望の場合は別途費用が発生します。</p>
           </div>
           <div class="lg:col-span-3">
             <h2 class="text-3xl font-bold text-gray-800">よくあるご質問</h2>
@@ -363,7 +419,7 @@
                   <span class="arrow-down text-2xl text-primary-accent">▼</span>
                 </div>
                 <div class="faq-answer px-6 pb-6 text-gray-700">
-                  <p>このプランはテンプレートの枠組みを活かすことで低価格を実現しています。そのため、デザインやレイアウトの大幅な変更はできかねます。写真と文章の差し替えが基本となります。</p>
+                  <p>LPプランと標準プランは、テンプレートの枠組みを活かすことで低価格を実現しています。そのため、大幅な変更はできかねます。CMSプランでは、より柔軟なカスタマイズが可能です。</p>
                 </div>
               </div>
               <div class="faq-item bg-gray-50 rounded-lg border border-gray-200">
@@ -390,14 +446,14 @@
       </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-24 bg-primary-accent">
+    <section id="contact" class="py-16 md:py-24 bg-[#FF8A8A]">
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold text-white">Webサイト制作、もう「高い」「難しい」で<br>諦める必要はありません。</h2>
-        <p class="mt-6 text-lg text-red-50 max-w-2xl mx-auto">
+        <p class="mt-6 text-lg text-white max-w-2xl mx-auto">
           まずは、どんなウェブサイトが作れるのか、テンプレートデザインをご覧ください。その品質と、驚きの価格にきっとご満足いただけるはずです。</p>
         <div class="mt-10">
-          <a href="https://forms.gle/SR2oS2bny7wc1vhU7" target="_blank"
-            class="bg-white text-primary-accent font-bold py-4 px-10 rounded-lg text-lg hover:bg-red-50 transition-colors">無料で相談してみる</a>
+          <a href="https://forms.gle/SR2oS2bny7wc1vhU7" target="_blank" class="cta-button-white">無料で相談してみる</a>
+          <p class="mt-4 text-white/80 text-sm">ご相談は無料です。無理な営業は一切いたしません。</p>
         </div>
       </div>
     </section>
@@ -452,12 +508,13 @@
       window.addEventListener('scroll', changeNav);
 
       const ctx = document.getElementById('planChart').getContext('2d');
+      // ★改善★ チャートのラベルとツールチップをSTUDIO用に更新
       const planChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['① 1ページLPプラン', '② 5ページ標準プラン', '③ 大規模プラン'],
+          labels: ['① 1ページLPプラン', '② 5ページ標準プラン', '③ CMS導入プラン'],
           datasets: [{
-            label: 'ページボリューム',
+            label: '機能',
             data: [1, 5, 8],
             backgroundColor: [
               'rgba(166, 214, 214, 0.7)', // Pastel Mint
@@ -482,7 +539,7 @@
             },
             title: {
               display: true,
-              text: 'プラン別ページボリューム比較',
+              text: 'プラン別 特徴比較',
               font: {
                 size: 16,
                 family: "'M PLUS Rounded 1c', sans-serif"
@@ -492,16 +549,13 @@
             tooltip: {
               callbacks: {
                 label: function (context) {
-                  let label = context.dataset.label || '';
-                  if (label) {
-                    label += ': ';
-                  }
-                  if (context.parsed.x !== null) {
-                    if (context.label === '③ 大規模プラン') {
-                      label += '5ページ以上';
-                    } else {
-                      label += context.parsed.x + 'ページ';
-                    }
+                  let label = '';
+                  if (context.label === '① 1ページLPプラン') {
+                    label = '静的ページ（更新機能なし）';
+                  } else if (context.label === '② 5ページ標準プラン') {
+                    label = '静的ページ（更新機能なし）';
+                  } else if (context.label === '③ CMS導入プラン') {
+                    label = '更新機能CMS導入';
                   }
                   return label;
                 }
@@ -513,14 +567,13 @@
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'ページ数目安',
+                text: '機能・ページボリューム',
                 color: '#5B5B5B'
               },
               ticks: {
                 color: '#7f7f7f',
                 callback: function (value, index, values) {
-                  if (value === 8) return '5+';
-                  return value;
+                  return ''; // X軸の目盛りを非表示にする
                 }
               }
             },
