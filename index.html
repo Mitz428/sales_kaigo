@@ -305,11 +305,11 @@
           <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-primary-accent">
             <span
               class="inline-block bg-primary-accent text-white text-sm font-bold px-3 py-1 rounded-full -mt-12 mb-4">一番人気</span>
-            <h3 class="text-2xl font-bold text-primary-accent">② 5ページ標準プラン</h3>
+            <h3 class="text-2xl font-bold text-primary-accent">② 3ページ標準プラン</h3>
             <p class="mt-2 text-gray-600 font-bold">公式ページとして信頼感を出したい施設様へ</p>
             <p class="mt-4 text-gray-600">トップ、理念、サービス、施設概要など、公式サイトに必要なページを網羅。更新機能がない静的サイトです。</p>
             <ul class="mt-4 space-y-2 text-gray-700">
-              <li>✓ 5ページ構成の静的サイト</li>
+              <li>✓ 3ページ構成の静的サイト</li>
               <li>✓ 公式サイト向け</li>
               <li>✓ 更新機能なし</li>
             </ul>
@@ -320,7 +320,7 @@
             <p class="mt-2 text-gray-600 font-bold">ご自身で更新したい法人様へ</p>
             <p class="mt-4 text-gray-600">お知らせやブログをご自身で簡単に更新できるCMSを導入。専門知識不要で、見たまま編集が可能です。</p>
             <ul class="mt-4 space-y-2 text-gray-700">
-              <li>✓ 5ページ以上に対応</li>
+              <li>✓ 3ページ以上に対応</li>
               <li>✓ 更新機能CMS導入</li>
               <li>✓ ブログやお知らせの簡単更新</li>
             </ul>
@@ -334,7 +334,7 @@
               1ページLPプラン</a>
             <a href="#demo-2"
               class="bg-white border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-lg w-full md:w-auto hover:bg-red-50 transition-colors">②
-              5ページ標準プラン</a>
+              3ページ標準プラン</a>
             <a href="#demo-3"
               class="bg-white border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-lg w-full md:w-auto hover:bg-red-50 transition-colors">③
               CMS導入プラン</a>
@@ -431,7 +431,7 @@
                     class="text-sm font-normal">(税込)</span></p>
               </div>
               <div class="bg-gray-100 p-6 rounded-lg">
-                <h3 class="text-xl font-bold">5ページ標準プラン</h3>
+                <h3 class="text-xl font-bold">3ページ標準プラン</h3>
                 <p class="text-3xl font-bold text-primary-accent mt-2">¥79,800 <span
                     class="text-sm font-normal">(税込)</span></p>
               </div>
@@ -541,11 +541,10 @@
       window.addEventListener('scroll', changeNav);
 
       const ctx = document.getElementById('planChart').getContext('2d');
-      // ★改善★ チャートのラベルとツールチップをSTUDIO用に更新
       const planChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['① 1ページLPプラン', '② 5ページ標準プラン', '③ CMS導入プラン'],
+          labels: ['① 1ページLPプラン', '② 3ページ標準プラン', '③ CMS導入プラン'],
           datasets: [{
             label: '機能',
             data: [1, 5, 8],
@@ -585,7 +584,7 @@
                   let label = '';
                   if (context.label === '① 1ページLPプラン') {
                     label = '静的ページ（更新機能なし）';
-                  } else if (context.label === '② 5ページ標準プラン') {
+                  } else if (context.label === '② 3ページ標準プラン') {
                     label = '静的ページ（更新機能なし）';
                   } else if (context.label === '③ CMS導入プラン') {
                     label = '更新機能CMS導入';
